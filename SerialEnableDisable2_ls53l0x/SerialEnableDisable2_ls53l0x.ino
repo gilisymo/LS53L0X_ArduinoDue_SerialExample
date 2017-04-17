@@ -21,22 +21,24 @@ void setup() {
   Serial1.begin(115200);
   while (!Serial1) ;
 
-  delay(100);
+  delay(10);
   // send 2 times disable 
   Serial1.println("disable");
-  delay(100);
+  delay(10);
   Serial1.println("disable");
-  delay(100);
+  delay(10);
   // get software version 
   Serial1.println("version");
-
   delay(100);
   // remove starting text
-  Serial1.println("set StartingText=0,");
-  delay(100);
+  Serial1.println("set StartingText=");
+  delay(10);
   // print more data
-  Serial1.println("set PrintAllRangeValues=1");
-  delay(100);
+  Serial1.println("set PrintAllRangeValues=0");
+  delay(10);
+  // use last good data in case of error
+  Serial1.println("set ErrorMode=2");
+  delay(10);
 
 }
 
